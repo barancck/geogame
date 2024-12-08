@@ -25,7 +25,7 @@ function startGame() {
     attribution: '&copy; <a href="https://carto.com/">CartoDB</a>',
   }).addTo(map);
 
-  fetch('data/countries.geojson?t=' + new Date().getTime())
+  fetch('data/countries.geojson')
     .then(response => response.json())
     .then(data => {
       loadQuestion(data);
@@ -66,7 +66,7 @@ function handleUserInput() {
   } else {
     alert(`Wrong! The correct answer was ${currentCountryName.toUpperCase()}.`);
     updateScore(-1);
-    fetch('countries.geojson')
+    fetch('data/countries.geojson')
       .then(response => response.json())
       .then(data => {
         loadQuestion(data);
