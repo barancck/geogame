@@ -58,7 +58,7 @@ function handleUserInput() {
   if (userGuess === currentCountryName) {
     alert("Correct! 🎉");
     updateScore(1);
-    fetch('data/countries.geojson')
+    fetch('countries.geojson')
       .then(response => response.json())
       .then(data => {
         loadQuestion(data);
