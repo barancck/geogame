@@ -25,7 +25,7 @@ function startGame() {
     attribution: '&copy; <a href="https://carto.com/">CartoDB</a>',
   }).addTo(map);
 
-  fetch('countries.geojson')
+  fetch('data/countries.geojson?t=' + new Date().getTime())
     .then(response => response.json())
     .then(data => {
       loadQuestion(data);
