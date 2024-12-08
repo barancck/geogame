@@ -66,7 +66,7 @@ function handleUserInput() {
   } else {
     alert(`Wrong! The correct answer was ${currentCountryName.toUpperCase()}.`);
     updateScore(-1);
-    fetch('data/countries.geojson')
+    fetch('countries.geojson')
       .then(response => response.json())
       .then(data => {
         loadQuestion(data);
